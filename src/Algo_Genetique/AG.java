@@ -7,11 +7,12 @@ import Profondeur.Satisfiabilite;
 import application.Result;
 
 
+
 public class AG {
-	
+
 
 public Result solution(Satisfiabilite pr) {
-		
+
 		int populationsize = 40;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
 		int groupesize = populationsize / 2;
 		double mutationrate = 0.03;
@@ -41,7 +42,7 @@ public Result solution(Satisfiabilite pr) {
 			}
 			gen++;
 			ArrayList<nouedd> tmp = new ArrayList<nouedd>();
-		
+
 			while (j < populationsize) {
 
 				tmp = new ArrayList<nouedd>();
@@ -93,7 +94,7 @@ public Result solution(Satisfiabilite pr) {
 					}
 					i++;
 				}
-		
+
 				nouedd nouvv = new nouedd(pr.num_satisfied(nouv), nouv);
 
 				nouvgeneration.add(nouvv);
@@ -112,12 +113,12 @@ public Result solution(Satisfiabilite pr) {
 			Result+="|"+bestsol[w];
 		}
 		Result+="]";
-		
+
 		pr.Satisfaite(bestsol);
-		
+
 		long end = System.currentTimeMillis();
 
-		
+
 		return new Result("",Result,""+best,""+(end-st));
 
 	}
